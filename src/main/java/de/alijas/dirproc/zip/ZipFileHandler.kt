@@ -12,7 +12,7 @@ import java.util.zip.ZipOutputStream
 class ZipFileHandler(tempDirPath: String) : IFileHandler, FileHandlerBase(tempDirPath) {
 
     override fun handle(inputFilePath: String, outputDirPath: String?, removeInputFile: Boolean): String {
-        val outputFilePathCalculated = startUp(inputFilePath, outputDirPath, "zip")
+        val outputFilePathCalculated = calculateOutputFilePath(inputFilePath, outputDirPath, "zip")
         try {
             val fis = FileInputStream(inputFilePath)
             val fos = FileOutputStream(outputFilePathCalculated)

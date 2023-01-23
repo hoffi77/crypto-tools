@@ -7,14 +7,16 @@ import java.nio.file.Paths
 open class FileHandlerBase(private val tempDirPath: String) {
 
     /**
-     * Calculate output filename
+     * Calculate path of output file
+     *
+     * If outputDirPath is given generate file there, else generate it to temp directory
      *
      * @param inputFilePath String
      * @param outputDirPath String?
      * @param addFileEnding String?
      * @return String
      */
-    protected fun startUp(inputFilePath: String, outputDirPath: String?, addFileEnding: String? = null): String {
+    protected fun calculateOutputFilePath(inputFilePath: String, outputDirPath: String?, addFileEnding: String? = null): String {
         val inputFileName = File(inputFilePath).name
 
         // If outputDirPath is given generate file there, else generate it to temp directory

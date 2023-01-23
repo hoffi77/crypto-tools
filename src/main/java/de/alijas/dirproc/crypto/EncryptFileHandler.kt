@@ -37,7 +37,7 @@ class EncryptFileHandler(
     }
 
     override fun handle(inputFilePath: String, outputDirPath: String?, removeInputFile : Boolean): String {
-        val outputFilePathCalculated = startUp(inputFilePath, outputDirPath, "enc")
+        val outputFilePathCalculated = calculateOutputFilePath(inputFilePath, outputDirPath, "enc")
         val fis = FileInputStream(inputFilePath)
         val fos = FileOutputStream(outputFilePathCalculated)
         try {

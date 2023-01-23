@@ -9,7 +9,7 @@ import java.util.zip.ZipInputStream
 
 class UnzipFileHandler(tempDirPath: String) : IFileHandler, FileHandlerBase(tempDirPath) {
     override fun handle(inputFilePath: String, outputDirPath: String?, removeInputFile: Boolean): String {
-        val outputFilePathCalculated = startUp(inputFilePath, outputDirPath)
+        val outputFilePathCalculated = calculateOutputFilePath(inputFilePath, outputDirPath)
         try {
             val fis = FileInputStream(inputFilePath)
             val fos = FileOutputStream(outputFilePathCalculated)

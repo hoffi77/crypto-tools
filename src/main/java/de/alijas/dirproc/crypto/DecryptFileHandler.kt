@@ -35,7 +35,7 @@ class DecryptFileHandler(
     }
 
     override fun handle(inputFilePath: String, outputDirPath: String?, removeInputFile : Boolean): String {
-        val outputFilePathCalculated = startUp(inputFilePath, outputDirPath)
+        val outputFilePathCalculated = calculateOutputFilePath(inputFilePath, outputDirPath)
         val fis = FileInputStream(inputFilePath)
         val fos = FileOutputStream(outputFilePathCalculated)
         try {

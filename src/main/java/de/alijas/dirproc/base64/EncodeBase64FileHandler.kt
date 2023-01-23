@@ -12,7 +12,7 @@ class EncodeBase64FileHandler(
 ) : IFileHandler, FileHandlerBase(tempDirPath) {
 
     override fun handle(inputFilePath: String, outputDirPath: String?, removeInputFile : Boolean): String {
-        val outputFilePathCalculated = startUp(inputFilePath, outputDirPath, "b64")
+        val outputFilePathCalculated = calculateOutputFilePath(inputFilePath, outputDirPath, "b64")
         val fis = FileInputStream(inputFilePath)
         val fos = FileOutputStream(outputFilePathCalculated)
         try {
